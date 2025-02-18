@@ -302,7 +302,7 @@ const chartData = computed(() => {
 
     const getSales = (code) => {
         $axios
-            .get(`/api/shopify/sales/${code}`)
+            .get(`/shopify/sales/${code}`)
             .then((response) => {
                 salesData.splice(0, salesData.length); 
     

@@ -16,7 +16,14 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      API_BASE_URL: process.env.API_BASE_URL || 'https://partenaire.lecercledesdiamantaires.com',
+      API_BASE_URL: process.env.API_BASE_URL || 'http://localhost:4000',
+      SHOP_NAME: process.env.SHOP_NAME,
+      SHOPIFY_BASE_URL: process.env.SHOPIFY_BASE_URL,
+      SHOPIFY_API_KEY: process.env.SHOPIFY_API_KEY,
+      SHOPIFY_PASSWORD: process.env.SHOPIFY_PASSWORD,
+      API_VERSION: process.env.API_VERSION,
+      EMAIL_USER: process.env.EMAIL_USER,
+      EMAIL_PASS: process.env.EMAIL_PASS
     },
     private: {
       JWT_SECRET: process.env.JWT_SECRET,
