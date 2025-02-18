@@ -8,7 +8,7 @@ export default function () {
 
     const getDiscountCode = async (name) => {
         try{
-            const response = await $axios.get(`api/shopify/get-code/${name}`);
+            const response = await $axios.get(`/shopify/get-code/${name}`);
             discountCode.value = response.data;
             return response.data;
 
@@ -28,7 +28,7 @@ export default function () {
     
     const createPromoCode = async (code = `PROMO-${generateRandomCode()}`) => {
         try {
-            const response = await $axios.post(`api/shopify/discount-code`, {
+            const response = await $axios.post(`/shopify/discount-code`, {
               code, // Nom du code promo à créer
             });
             return response.data;
@@ -44,7 +44,7 @@ export default function () {
             if (!discountCode) {
                 throw new Error('Code promo introuvable');
               }
-              const response = await $axios.delete(`api/shopify/delete-code/${discountCode.id}.json`);
+              const response = await $axios.delete(`/shopify/delete-code/${discountCode.id}.json`);
               alert('Code promo supprimé');
               return response.data;
         } catch (error) {

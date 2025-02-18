@@ -7,6 +7,7 @@ import { PORT } from './config/env.js';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import shopifyRoutes from './routes/shopifyRoutes.js';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use(cors({
     allowedHeaders: 'Content-Type,Authorization',
 }));
 app.use(bodyParser.json());
+app.use('/shopify', shopifyRoutes);
 
 // Utilisation du routeur global
 app.use('/api', router);

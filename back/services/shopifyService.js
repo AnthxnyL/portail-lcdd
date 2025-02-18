@@ -6,8 +6,6 @@ const SHOPIFY_BASE_URL = process.env.SHOPIFY_BASE_URL; // URL de base Shopify
 const SHOPIFY_API_KEY = process.env.SHOPIFY_API_KEY;   // Clé API Shopify
 const SHOPIFY_PASSWORD = process.env.SHOPIFY_PASSWORD; // Mot de passe API Shopify
 
-console.log('SHOPIFY_BASE_URL', SHOPIFY_BASE_URL);
-
 export const createShopifyDiscountCode = async (priceRuleId, code) => {
     try {
         const response = await axios.post(
